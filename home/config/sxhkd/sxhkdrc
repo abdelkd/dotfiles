@@ -1,0 +1,51 @@
+#! /usr/bin/env bash
+
+super + Escape
+  pkill -USR1 -x sxhkd
+
+super + Return
+  st -e "tmux"
+
+super + s
+  urxvt
+
+super + alt + {q,r}
+  bspc {quit,wm -r}
+
+# focus the next/previous window in the current desktop
+super + {o,i}
+	bspc node -f {next,prev}.local.!hidden.window
+
+super + bracket{left,right}
+  bspc desktop -f {prev,next}.local
+
+super + ctrl + {h,j,k,l}
+  bspc node -p {west,south,north,east}
+
+super + m
+  bspc desktop -l next
+
+super + q
+  bspc node -c
+
+super + y
+  bspc node newest.marked.local -n newest.!automatic.local
+
+super + {_,shift + }{h,j,k,l}
+  bspc node -{f,s} {west,south,north,east}
+
+
+# Programs
+
+# Rofi
+super + {d,r,p,s}
+	sh $HOME/.config/rofi/bin/{launcher,runner,powermenu,screenshot}
+
+# Firefox
+super + f
+  firefox
+
+# Brave
+super + b
+  brave
+

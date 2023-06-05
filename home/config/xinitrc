@@ -1,0 +1,6 @@
+xrdb -merge ~/.Xresources
+
+urxvtd &
+
+sxhkd &
+exec bspwm

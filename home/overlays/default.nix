@@ -1,0 +1,3 @@
+{
+  imports = [ ./bspwm.nix ];
+}
